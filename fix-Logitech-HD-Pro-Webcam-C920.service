@@ -1,0 +1,9 @@
+[Unit]
+After=network.service
+
+[Service]
+ExecStart=/usr/local/bin/fix-Logitech-HD-Pro-Webcam-C920.sh
+Type=oneshot
+
+[Install]
+WantedBy=default.target
