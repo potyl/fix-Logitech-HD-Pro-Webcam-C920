@@ -15,6 +15,5 @@ fi
 echo "Found video device: $video_device for $webcam_name"
 
 v4l2-ctl -d "$video_device" --set-ctrl=focus_auto=0
-v4l2-ctl -d "$video_device" --set-ctrl=exposure_auto=1
 
 exit 0
