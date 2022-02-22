@@ -1,7 +1,6 @@
 SHELL := bash
 
-WEBCAM_NAME    ?= HD Pro Webcam C920
-WEBCAM_DEVICE   = $(shell v4l2-ctl --list-devices | grep -A1 "$(WEBCAM_NAME)" | tail -n1 | sed -E 's/^\s+//')
+WEBCAM_DEVICE   = /dev/video0
 
 COLOR_START     = \e[91m\e[1m
 COLOR_END       = \e[0m
@@ -10,7 +9,6 @@ SAY             = @printf "$(COLOR_START)%s\n$(COLOR_END)"
 .PHONY: info
 info:
 	$(SAY) "Video device"
-	@echo "WEBCAM_NAME:    $(WEBCAM_NAME)"
 	@echo "WEBCAM_DEVICE:  $(WEBCAM_DEVICE)"
 	@echo
 
