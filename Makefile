@@ -17,6 +17,12 @@ info:
 	$(SAY) "Video controls"
 	@v4l2-ctl --device "$(WEBCAM_DEVICE)" --get-ctrl focus_auto --get-ctrl exposure_auto
 
+
+.PHONY: setup
+setup:
+	sudo apt update && sudo apt install v4l-utils
+
+
 .PHONY: list-ctrls
 list-ctrls:
 	v4l2-ctl --device "$(WEBCAM_DEVICE)" --list-ctrls
