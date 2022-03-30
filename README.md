@@ -19,7 +19,6 @@ Clone the repo and run:
 
 ```bash
 make install
-
 ```
 
 ## Uninstallation
