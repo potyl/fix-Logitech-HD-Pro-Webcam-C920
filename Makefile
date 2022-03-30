@@ -21,6 +21,11 @@ setup:
 	sudo apt update && sudo apt install v4l-utils
 
 
+.PHONY: run
+run:
+	sudo ./fix-Logitech-HD-Pro-Webcam-C920.sh
+
+
 .PHONY: list-ctrls
 list-ctrls:
 	v4l2-ctl --device "$(WEBCAM_DEVICE)" --list-ctrls
