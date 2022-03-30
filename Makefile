@@ -1,6 +1,6 @@
 SHELL := bash
 
-WEBCAM_DEVICE   = /dev/video0
+WEBCAM_DEVICE   = /dev/web-c920
 
 COLOR_START     = \e[91m\e[1m
 COLOR_END       = \e[0m
@@ -49,6 +49,10 @@ install:
 	$(SAY) "Installing systemd service"
 	sudo install -m 0644 -o root -g root fix-Logitech-HD-Pro-Webcam-C920.service /etc/systemd/system/
 
+	$(SAY) "Enabling udev rule"
+	sudo install -m 0644 -o root -g root fix-Logitech-HD-Pro-Webcam-C920.rules /etc/udev/rules.d/99-fix-Logitech-HD-Pro-Webcam-C920.rules
+	sudo udevadm control --reload
+
 	$(SAY) "Enabling service"
 	sudo systemctl daemon-reload
 	sudo systemctl enable fix-Logitech-HD-Pro-Webcam-C920.service 
@@ -65,3 +69,6 @@ uninstall:
 
 	$(SAY) "Uninstalling systemd service"
 	sudo rm -f /etc/systemd/system/fix-Logitech-HD-Pro-Webcam-C920.service
+
+	$(SAY) "Uninstalling udev rule"
+	sudo rm -f /etc/udev/rules.d/99-fix-Logitech-HD-Pro-Webcam-C920.rules
