@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-function get_video_device() {
+function get_video_device {
     if [[ $# == 0 ]]; then
         echo "${FUNCNAME[0]}: device_name"
         exit 1
