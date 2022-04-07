@@ -38,7 +38,7 @@ status:
 
 .PHONY: logs
 logs:
-	journalctl -xe -u fix-Logitech-HD-Pro-Webcam-C920.service
+	journalctl -fex -u fix-Logitech-HD-Pro-Webcam-C920.service
 
 
 .PHONY: install
