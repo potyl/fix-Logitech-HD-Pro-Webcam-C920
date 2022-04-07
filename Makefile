@@ -53,14 +53,14 @@ install:
 	sudo install -m 0644 -o root -g root fix-Logitech-HD-Pro-Webcam-C920.rules /etc/udev/rules.d/99-fix-Logitech-HD-Pro-Webcam-C920.rules
 	sudo udevadm control --reload
 
-	$(SAY) "Enabling service"
+	$(SAY) "Loading the systemd service"
 	sudo systemctl daemon-reload
 	sudo systemctl enable fix-Logitech-HD-Pro-Webcam-C920.service 
 
 
 .PHONY: uninstall
 uninstall:
-	$(SAY) "Disabling service"
+	$(SAY) "Disabling the systemd service"
 	sudo systemctl disable fix-Logitech-HD-Pro-Webcam-C920.service 
 	sudo systemctl daemon-reload
 
