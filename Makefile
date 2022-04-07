@@ -55,7 +55,7 @@ install:
 
 	$(SAY) "Loading the systemd service"
 	sudo systemctl daemon-reload
-	sudo systemctl enable fix-Logitech-HD-Pro-Webcam-C920.service 
+	sudo systemctl disable fix-Logitech-HD-Pro-Webcam-C920.service
 
 
 .PHONY: uninstall
