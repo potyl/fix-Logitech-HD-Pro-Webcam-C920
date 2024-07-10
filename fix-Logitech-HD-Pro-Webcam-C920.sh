@@ -45,6 +45,6 @@ fi
 webcam_name="$(v4l2-ctl --device "$video_device" --info | grep -E '^\s+Card type\s+:' | sed -E 's/^.*?:\s+//')"
 echo "Found video device: $video_device for $webcam_name"
 
-v4l2-ctl --device "$video_device" --set-ctrl=focus_auto=0
+v4l2-ctl --device "$video_device" --set-ctrl=focus_automatic_continuous=0
 
 exit 0
